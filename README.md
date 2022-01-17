@@ -1,5 +1,4 @@
-The People's Gym:
-goal: A wellness center owned and operated by the community.
+The People's Gym: A wellness center owned and operated by the community.
 
 Features:
 - Memberships as NFT
