@@ -24,10 +24,13 @@ contract TPGMembershipToken is ERC721 {
     }
 
     function mintMembership() public payable returns (uint256) {
-        require(currentMemberCount < 3, "All memberships consumed.");
         _safeMint(msg.sender, currentMemberCount);
         currentMemberCount += 1;
         return currentMemberCount;
+    }
+
+    function membershipAvailable() public view returns (bool) {
+        return currentMemberCount > 3;
     }
 }
 
@@ -41,8 +44,8 @@ contract TPG is IERC721Receiver {
     }
 
     function mintMembership() public payable {
-        console.log("mintMembership msg.value: ", msg.value);
         require(msg.value >= 1, "Mint price not met.");
+        require(tokenContract.membershipAvailable(), "All memberships consumed");
         tokenContract.mintMembership();
         treasury.deposit{ value: msg.value }();
     }
