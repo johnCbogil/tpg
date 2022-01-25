@@ -30,13 +30,14 @@ contract TPGMembershipToken is ERC721 {
     }
 
     function membershipAvailable() public view returns (bool) {
-        return currentMemberCount > 3;
+        return currentMemberCount < 3;
     }
 }
 
 contract TPG is IERC721Receiver {
-    TPGMembershipToken public tokenContract;
-    Treasury public treasury;
+
+    TPGMembershipToken tokenContract;
+    Treasury treasury;
 
     constructor() {
         tokenContract = new TPGMembershipToken();
@@ -44,8 +45,8 @@ contract TPG is IERC721Receiver {
     }
 
     function mintMembership() public payable {
-        require(msg.value >= 1, "Mint price not met.");
-        require(tokenContract.membershipAvailable(), "All memberships consumed");
+        require(msg.value >= 1000000000000000000, "Mint price not met.");
+        require(tokenContract.membershipAvailable(), "All memberships consumed.");
         tokenContract.mintMembership();
         treasury.deposit{ value: msg.value }();
     }
@@ -60,11 +61,10 @@ contract TPG is IERC721Receiver {
 }
 
 contract Treasury {
-    uint256 public totalReserves;
+    uint256 totalReserves;
 
     function deposit() public payable {
         totalReserves = totalReserves + msg.value;
-        console.log("Total reserves: ", totalReserves);
     }
 
     function getBalance() public view returns (uint256) {

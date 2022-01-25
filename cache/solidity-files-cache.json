@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/john.bogil/Development/solidity/tpg/contracts/TPG.sol": {
-      "lastModificationDate": 1642366468300,
-      "contentHash": "2204619e04cada832a61f0cd07de69be",
+      "lastModificationDate": 1643126414674,
+      "contentHash": "ebd78bba7ba121d30d6f25063f773c45",
       "sourceName": "contracts/TPG.sol",
       "solcConfig": {
         "version": "0.8.0",
