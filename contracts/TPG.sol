@@ -38,6 +38,7 @@ contract TPG is IERC721Receiver {
 
     TPGMembershipToken tokenContract;
     Treasury treasury;
+    uint private mintPrice = 1000000000000000000;
 
     constructor() {
         tokenContract = new TPGMembershipToken();
@@ -45,7 +46,7 @@ contract TPG is IERC721Receiver {
     }
 
     function mintMembership() public payable {
-        require(msg.value >= 1000000000000000000, "Mint price not met.");
+        require(msg.value >= mintPrice, "Mint price not met.");
         require(tokenContract.membershipAvailable(), "All memberships consumed.");
         tokenContract.mintMembership();
         treasury.deposit{ value: msg.value }();
