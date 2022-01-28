@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/john.bogil/Development/solidity/tpg/contracts/TPG.sol": {
-      "lastModificationDate": 1643126507658,
-      "contentHash": "47c353805818a392ebea33c2f96269ad",
+      "lastModificationDate": 1643254447695,
+      "contentHash": "a8bf1b1c2791fd181cb5f3a552ebdd11",
       "sourceName": "contracts/TPG.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -29,17 +29,16 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
-        "hardhat/console.sol"
+        "hardhat/console.sol",
+        "./Treasury.sol",
+        "./TPGMembershipToken.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
       ],
       "artifacts": [
-        "TPG",
-        "TPGMembershipToken",
-        "Treasury"
+        "TPG"
       ]
     },
     "/Users/john.bogil/Development/solidity/tpg/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
@@ -404,6 +403,78 @@
       ],
       "artifacts": [
         "IERC165"
+      ]
+    },
+    "/Users/john.bogil/Development/solidity/tpg/contracts/Treasury.sol": {
+      "lastModificationDate": 1643254323268,
+      "contentHash": "c2a7f4f8ce90288b726a10f247ed139a",
+      "sourceName": "contracts/Treasury.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Treasury"
+      ]
+    },
+    "/Users/john.bogil/Development/solidity/tpg/contracts/TPGMembershipToken.sol": {
+      "lastModificationDate": 1643254404229,
+      "contentHash": "182442cf1f1071711eeb76c9f1c23fc3",
+      "sourceName": "contracts/TPGMembershipToken.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TPGMembershipToken"
       ]
     }
   }
